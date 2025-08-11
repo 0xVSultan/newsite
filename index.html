@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<!-- Vibe coded, but it snaps!-->
+<html lang="hu">
 <head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV839LHYQJ"></script>
@@ -10,10 +11,325 @@
 
   gtag('config', 'G-HV839LHYQJ');
 </script>
-  <title>...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Csurgó 2025 => 3025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a3d 100%);
+            min-height: 100vh;
+            color: #d4af37;
+        }
+		
+		.footer-disclaimer {
+  position: fixed;
+  right: 20px;
+  bottom: 80px; /* Az új footer fölé pozícionálva */
+  color: white;
+  text-align: right;
+  z-index: 1001; /* Magasabb z-index mint a footer (999) */
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 12px;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+}
+
+
+    .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(90deg, #1e3a5f 0%, #2d5a3d 50%, #1e3a5f 100%);
+        border-bottom: 3px solid #d4af37;
+        z-index: 1000;
+        overflow: hidden;
+    }
+    .scrolling-container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+        will-change: transform;
+    }
+    .scroll-item {
+        font-size: 28px;
+        font-weight: bold;
+        color: #d4af37;
+        margin-right: 100px;
+    }
+	
+	.scroll-item.main-title {
+    color: #fff;
+}
+
+
+        /* Fő tartalom */
+        .main-content {
+            margin-top: 80px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 50px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+            border-color: #fff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .feature-card p {
+            color: #fff;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Reszponzív design */
+        @media (max-width: 768px) {
+            .scroll-item {
+                font-size: 22px;
+                margin-right: 60px;
+            }
+            
+            .scroll-item.main-title {
+                font-size: 26px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .sticky-header {
+                height: 60px;
+            }
+            
+            .main-content {
+                margin-top: 60px;
+                padding: 30px 15px;
+            }
+			
+			
+        }
+		.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #1e3a5f 0%, #2d5a3d 50%, #1e3a5f 100%);
+    border-top: 2px solid #d4af37;
+    z-index: 999;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.signature-counter {
+    color: #d4af37;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.signature-counter strong {
+    color: #fff;
+    font-size: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.email {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.email:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+    </style>
 </head>
 <body>
-  <h1>Először kell 120 aláírás(+10%, biztos, ami biztos). Akkor lehet rajthoz állni a futóversenyben, a többi pedig majd kiderül. De csakis akkor derülhet ki.</h1>
-  <h1>Beszélgettem kicsit Gemini pro-val még kitaláta: "Ez egy zseniális, szocio-ökonómiai megoldás..."...</h1> <a href="https://g.co/gemini/share/cca0ef011b6f" target="_blank">https://g.co/gemini/share/cca0ef011b6f</a> 
+    <!-- Ragadós fejléc scrollozó szöveggel -->
+<header class="sticky-header">
+    <div class="scrolling-container">
+        <div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+        <div class="scroll-item">Megújulás</div>
+        <div class="scroll-item">Innováció</div>
+        <div class="scroll-item">Transzparencia</div>
+        <div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+        <div class="scroll-item">Megújulás</div>
+        <div class="scroll-item">Innováció</div>
+        <div class="scroll-item">Transzparencia</div>
+		<div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+        <div class="scroll-item">Megújulás</div>
+        <div class="scroll-item">Innováció</div>
+        <div class="scroll-item">Transzparencia</div>
+		<div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+        <div class="scroll-item">Megújulás</div>
+        <div class="scroll-item">Innováció</div>
+        <div class="scroll-item">Transzparencia</div>
+    </div>
+</header>
+
+    <!-- Fő tartalom -->
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">Csurgó Jövője</h1>
+            <p class="hero-subtitle">Egy évezred ugrás a holnap felé*</p>
+            
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>Megújulás</h3>
+                    <p>Csurgó új fejezetet nyithat, ahol a hagyományok és a modern fejlődés kéz a kézben jár. Közösen írjuk majd e város jövőjét, hogy az mindannyiunk számára élhető és inspiráló legyen.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Innováció</h3>
+                    <p>Új technológiák és úttörő megoldások révén fenntartható, virágzó és kényelmesebb várost építhetünk minden csurgói lakos számára.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Transzparencia</h3>
+                    <p>Nyílt kommunikáció és átlátható döntések jellemzik majd a munkámat. Minden polgárnak joga van tájékozódni és véleményt mondani.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+	let titleIndex = 0;
+const titleTexts = [
+    "Csurgó 2025 ➤ 3025",
+    "Megújulás", 
+    "Innováció",
+    "Transzparencia", 
+    "2025 a lehetőség éve!",
+    "Vass Zoltán"
+];
+
+function scrollTitle() {
+    document.title = titleTexts[titleIndex];
+    titleIndex = (titleIndex + 1) % titleTexts.length;
+}
+
+// Indítás és 3 másodpercenként váltás
+setInterval(scrollTitle, 3000);
+scrollTitle(); // Azonnali indítás
+    const container = document.querySelector(".scrolling-container");
+    let pos = 0;
+    let speed = 1.5; // alap sebesség (px/frame)
+    let containerWidth = container.scrollWidth;
+    const step = () => {
+        pos -= speed;
+        if (pos <= -containerWidth / 2) {
+            pos = 0; // ismétlés
+        }
+        container.style.transform = `translateX(${pos}px)`;
+        requestAnimationFrame(step);
+    };
+    step();
+
+    container.addEventListener("mouseenter", () => {
+        speed = 0.5; // lassítás
+    });
+    container.addEventListener("mouseleave", () => {
+        speed = 2.5; // gyorsítás
+        setTimeout(() => speed = 1.5, 300); // vissza alap sebességre
+    });
+});
+</script>
+<footer class="fixed-footer">
+    <div class="footer-content">
+        <p class="signature-counter">Az indulásomhoz még szükséges aláírások száma: <strong>120</strong></p>
+        <div class="contact-info">
+            <p class="name">Vass Zoltán</p>
+            <a href="mailto:a.friendly.guy@tuta.io" class="email">a.friendly.guy@tuta.io</a>
+        </div>
+    </div>
+</footer>
+<div class="footer-disclaimer">
+    <p>
+      *csupán ez a része reklámszöveg!
+    </p>
+  </div>
 </body>
 </html>
