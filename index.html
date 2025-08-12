@@ -224,6 +224,175 @@
     color: #fff;
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
 }
+
+.pageable-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.page-container {
+    position: relative;
+    min-height: 400px;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.page-content {
+    padding: 40px;
+    height: 400px;
+    overflow-y: auto;
+    color: #fff;
+}
+
+/* A teljes scrollbar */
+.page-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* A scrollbar háttér */
+.page-content::-webkit-scrollbar-track {
+    background: #2f4f4f;
+    border-radius: 6px;
+}
+
+/* A görgető "fogantyú" */
+.page-content::-webkit-scrollbar-thumb {
+    background: #B87333;
+    border-radius: 6px;
+}
+
+/* Hover állapot */
+.page-content::-webkit-scrollbar-thumb:hover {
+    background: darkgoldenrod;
+}
+
+.page-content h3 {
+    color: #d4af37;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.page-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.nav-btn {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.nav-btn:hover {
+    background: #d4af37;
+    color: #1e3a5f;
+    transform: translateY(-2px);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.page-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #d4af37;
+    transform: scale(1.3);
+}
+
+.indicator:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 20px;
+        height: 300px;
+    }
+    
+    .page-navigation {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+.page.active[data-page="1"] h1,
+.page.active[data-page="1"] h2 {
+  text-align: left; /* Balra igazítás */
+  margin-bottom: 20px; /* Extra hely a címek alatt */
+}
+
+.page.active[data-page="1"] p,
+.page.active[data-page="1"] li {
+  line-height: 1.6;
+
+}
+
+.page.active[data-page="1"] ul {
+  padding-left: 20px;
+  margin: 0 0 20px 0;/* Töröljük az alapértelmezett margót */
+  list-style-position: inside; /* A felsorolásjelek a szöveggel együtt balra igazítva */
+  text-align: left; /* Balra igazítás a felsorolás egészére */
+}
     </style>
 </head>
 <body>
@@ -272,7 +441,80 @@
                 </div>
             </div>
         </section>
+		<div class="pageable-content">
+    <div class="page-container">
+        <div class="page active" data-page="1">
+            <div class="page-content">
+                <article>
+      <h1>Egy átlagos keddi nap Csurgón...</h1>
+      <p>2025. augusztus 12-én kezdtem el ajánlásokat gyűjteni. Néha egészen meglepő az emberek reakciója. Ez még csak az a fázis, amelyben eldől, hogy kik kerülnek fel a szavazólapra, de volt, aki már szinte programokat követelt.</p>
+      <p>Többeknek említettem, hogy nem kedvelem azt a politikusi hozzáállást (ami sajnos a legtöbbjükre jellemző), hogy mindig másra hárítják a felelősséget. Éppen ezért kitaláltam egy jogi konstrukciót, amelyet kizárólag egy ígéretemhez tudok kötni. Ha ezt az ígéretemet nem tartom be, akkor egy évtől öt évig terjedő szabadságvesztéssel leszek sújtható csalás miatt. Nem tartom valószínűnek, hogy hasonló önként vállalt büntetőjogi felelősséget bármelyik most induló (vagy korábban, az országban indult) jelölt vállalna, tekintve, hogy az ilyen felelősségvállalás rendkívül ritka és komoly személyes kockázatokkal jár. A politikai vagy közéleti szerepvállalás során a jelöltek általában kerülik az olyan helyzeteket, amelyek közvetlen jogi következményekkel járhatnak, hiszen ez nemcsak a karrierjüket, hanem a személyes szabadságukat is veszélyeztetheti.</p>
+      
+      <h2>A terv</h2>
+      <p>Ha a választópolgárok többsége bizalmat szavaz nekem, a fizetésem jelentős részét a következő célokra fordítom:</p>
+      <ul>
+        <li>Összeállítok egy olyan szervert, amely különféle mesterséges intelligencia modelleket futtatva képes 150-200 felhasználót egyszerre (ésszerű késleltetéssel) kiszolgálni.</li>
+        <li>Ezt a gépet az önkormányzatnak ajándékozom.</li>
+        <li>Miután a fenti beszerzés teljes mértékben megvalósult (szükségesek egyéb kellékek is, például túláramvédett elosztók, hálózati eszközök stb.), amíg a tisztségemet betöltöm, helyi valódi nonprofit szervezeteknek adományozom havonta ugyanazt az összeget, amelyet addig a beszerzésre fordítottam.</li>
+      </ul>
+      
+      <h2>Miért lenne jó egy ilyen rendszer?</h2>
+      <p>Például azért, mert:</p>
+      <ul>
+        <li>A lakosság folyamatosan jelezheti igényeit és panaszait. Lényegében évi 365 napban, 0-24 órában lehet fogadóórát tartani. A rendszerbe bekerülő adatokat igény szerint (ez a kívánatos működés) anonimizálni lehet, de szükséges biztosítani, hogy az adott személy valós és illetékes/érintett legyen az ügyben.</li>
+        <li>A hatályos rendeletekkel kapcsolatban bármelyik lakos felvilágosítást kérhet, és a mesterséges intelligencia értelmesen visszakérdezve fel tudja mérni, hogy mi vonatkozik a kérdezőre.</li>
+        <li>A közvetlenül is mérhető anyagi előnyöket leginkább az a funkciója biztosítja, amivel a rendszer összegyűjti az éppen elérhető aktuális pályázatokat, teljes mértékben értelmezve azok szabályait. Ez a funkció a lakosság számára is elérhető lesz, akár e-mailben küldött hírlevelet is kaphat bárki előre beállított paraméterek (lakóház felújítás, bizonyos típusú vállalkozás támogatása, stb.) alapján, és a pályázatoknak minimum a vázlatát is össze tudja majd állítani a rendszer.</li>
+        <li>A hivatalos dokumentumok kitöltésében is olyan segítséget nyújt majd, mint egy ügyintéző.</li>
+      </ul>
+      <p>A fentiek csupán példák, de bármilyen felhasználási ötletet szívesen fogadok a honlapon található e-mail-címen.</p>
+      
+      <p>A rendszer körülbelül 12 millió forintos eszköz lenne. Jelenlegi helyzetemben nem tudom vállalni, hogy egy ilyen értékű eszközt ajándékozzak, csak megválasztásom esetén.</p>
+      
+      <h2>Fizetésemmel kapcsolatban</h2>
+      <p>A fizetésem mértékével kapcsolatban: kezdetben úgy gondoltam, hogy maximum akkora havi bruttó fizetésre tartanék igényt, amelynek nettó értéke 30 × 12 500 forint. Azonban a hatályos törvények szerint a főállású alpolgármester fizetése a polgármester fizetésének 70-90%-a, így nem tudom vállalni, hogy kizárólag minimális összegű fizetést igényeljek. Az előbb megjelölt nettó érték számomra teljes mértékben megfelelő, és a különbözetet a város és a lakosság szolgálatába állítom.</p>
+      
+      <h2>Jogi konstrukció</h2>
+      <p>Az önként vállalt ajándékozás azt jelenti, hogy annak nem teljesítése esetén a következő valósul meg: „Aki jogtalan haszonszerzés végett mást tévedésbe ejt, vagy tévedésben tart, és ezzel kárt okoz, csalást követ el.” Tehát, ha nem ajándékoznám oda az eszközt, jogtalan haszonszerzés történne, Önök lennének tévedésbe ejtve vagy tévedésben tartva, és az önkormányzat szenvedne kárt, hiszen nem kapná meg az eszközt. Ez a feltételes ajándékozással kapcsolatos, jogi erővel bíró egyoldalú nyilatkozat meglehetősen speciális jogi megoldás, és sajnos más ígéreteimmel kapcsolatban nem tudok hasonló megoldást alkalmazni. Aki az általam vállalni kívánt tisztséget csupán kifizetőhelynek tekintené, annak biztosan nem jutna eszébe hasonló megoldás – de ezzel nem kívánok senkit minősíteni. Ez nem feltétlenül az ő hibájuk, hiszen sokan így tekintenek a polgármesteri tisztségre, és az emberek tetteikkel hatnak egymás gondolkodására is. Ezért szeretnék olyan módon cselekedni, amely eltér a megszokottól.</p>
+    </article>
+            </div>
+        </div>
+        
+        <div class="page" data-page="2">
+            <div class="page-content">
+                <h3>Gazdasági Fejlesztés</h3>
+				<p>Az alábbi szöveget az a mesterséges intelligencia generálta önmagától példaszövegként, amit csupán arra utasítottam, hogy a weboldalnak ez a részét (a lapozható dobozt) készítse el.
+				Meglepő módon nagyon hasonlít a szokásos (eddigi...) politikusi szócséplésre, de majd írok helyette kézzelfoghatóbbat.</p>
+				
+                <p>Csurgó gazdasági potenciáljának kiaknázása kulcsfontosságú a város jövője szempontjából. Olyan helyi vállalkozásokat szeretnék támogatni, amelyek munkahelyeket teremtenek és hozzájárulnak a helyi gazdaság erősítéséhez.</p>
+                <p>Kiemelt figyelmet fordítok a turizmus fejlesztésére, hiszen városunk természeti és kulturális adottságai kiváló alapot nyújtanak ehhez. A helyi termékek és szolgáltatások népszerűsítésével új bevételi források nyílhatnak meg.</p>
+                <p>Az innovatív megoldások támogatásával és a digitális fejlesztések előmozdításával biztosíthatjuk, hogy Csurgó lépést tartson a 21. század kihívásaival. Ezt szolgálják majd a tervezett inkubátorházak és co-working terek is.</p>
+            </div>
+        </div>
+        
+        <div class="page" data-page="3">
+            <div class="page-content">
+                <h3>Környezet és Fenntarthatóság</h3>
+				<p>Az alábbi szöveget az a mesterséges intelligencia generálta önmagától példaszövegként, amit csupán arra utasítottam, hogy a weboldalnak ez a részét (a lapozható dobozt) készítse el.
+				Meglepő módon nagyon hasonlít a szokásos (eddigi...) politikusi szócséplésre, de majd írok helyette kézzelfoghatóbbat.</p>
+                <p>A környezetvédelem és a fenntartható fejlődés nem luxus, hanem alapvető szükséglet. Csurgó számára olyan környezeti politikát képzelek el, amely a természet megóvását a gazdasági fejlődéssel összehangolja.</p>
+                <p>Támogatom a megújuló energiaforrások használatát, a hulladékgazdálkodás korszerűsítését és a zöldterületek bővítését. Ezek a lépések nemcsak környezetünk védelmét szolgálják, hanem hosszú távon gazdasági előnyökkel is járnak.</p>
+                <p>Fontosnak tartom a környezettudatos szemlélet fejlesztését is. Oktatási programokon keresztül szeretném elérni, hogy minden generáció tisztában legyen a környezetvédelem fontosságával és aktívan részt vegyen benne.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-navigation">
+        <button class="nav-btn prev-btn" onclick="changePage(-1)">‹ Előző</button>
+        <div class="page-indicators">
+            <span class="indicator active" onclick="goToPage(1)"></span>
+            <span class="indicator" onclick="goToPage(2)"></span>
+            <span class="indicator" onclick="goToPage(3)"></span>
+        </div>
+        <button class="nav-btn next-btn" onclick="changePage(1)">Következő ›</button>
+    </div>
+</div>
     </main>
+	
 
    <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -316,10 +558,41 @@ scrollTitle(); // Azonnali indítás
         setTimeout(() => speed = 1.5, 300); // vissza alap sebességre
     });
 });
+let currentPage = 1;
+const totalPages = 3;
+
+function changePage(direction) {
+    const newPage = currentPage + direction;
+    
+    if (newPage >= 1 && newPage <= totalPages) {
+        goToPage(newPage);
+    }
+}
+
+function goToPage(pageNum) {
+    // Eltávolítja az active osztályt az összes oldalról és indikátorról
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    document.querySelectorAll('.indicator').forEach(ind => ind.classList.remove('active'));
+    
+    // Hozzáadja az active osztályt az új oldalhoz és indikátorhoz
+    document.querySelector(`[data-page="${pageNum}"]`).classList.add('active');
+    document.querySelectorAll('.indicator')[pageNum - 1].classList.add('active');
+    
+    currentPage = pageNum;
+    
+    // Gombok állapotának frissítése
+    document.querySelector('.prev-btn').disabled = currentPage === 1;
+    document.querySelector('.next-btn').disabled = current === totalPages;
+}
+
+// Inicializálás
+document.addEventListener('DOMContentLoaded', function() {
+    goToPage(1);
+});
 </script>
 <footer class="fixed-footer">
     <div class="footer-content">
-        <p class="signature-counter">Az indulásomhoz még szükséges aláírások száma: <strong>120</strong></p>
+        <p class="signature-counter">Az indulásomhoz még szükséges aláírások száma: <strong>115</strong></p>
         <div class="contact-info">
             <p class="name">Vass Zoltán</p>
             <a href="mailto:a.friendly.guy@tuta.io" class="email">a.friendly.guy@tuta.io</a>
