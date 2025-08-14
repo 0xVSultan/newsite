@@ -138,36 +138,6 @@
             line-height: 1.6;
         }
 
-        /* Reszponzív design */
-        @media (max-width: 768px) {
-            .scroll-item {
-                font-size: 22px;
-                margin-right: 60px;
-            }
-            
-            .scroll-item.main-title {
-                font-size: 26px;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .sticky-header {
-                height: 60px;
-            }
-            
-            .main-content {
-                margin-top: 60px;
-                padding: 30px 15px;
-            }
-			
-			
-        }
 		.fixed-footer {
     position: fixed;
     bottom: 0;
@@ -237,6 +207,8 @@
 }
 
 .page-container {
+margin-block: 2% ;
+writing-mode: horizontal-tb;
     position: relative;
     min-height: 400px;
 }
@@ -260,7 +232,7 @@
 }
 
 .page-content {
-    padding: 40px;
+    padding: 10px;
     height: 400px;
     overflow-y: auto;
     color: #fff;
@@ -306,7 +278,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 10px 10px;
     background: rgba(0, 0, 0, 0.2);
     border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
@@ -358,23 +330,6 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .page-content {
-        padding: 20px;
-        height: 300px;
-    }
-    
-    .page-navigation {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-btn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-}
 .page.active[data-page="1"] h1,
 .page.active[data-page="1"] h2 {
   text-align: left; /* Balra igazítás */
@@ -393,57 +348,113 @@
   list-style-position: inside; /* A felsorolásjelek a szöveggel együtt balra igazítva */
   text-align: left; /* Balra igazítás a felsorolás egészére */
 }
+
+.page.active[data-page="2"] h1,
+.page.active[data-page="2"] h2 {
+  text-align: left; /* Balra igazítás */
+  margin-bottom: 20px; /* Extra hely a címek alatt */
+}
+
+.page.active[data-page="2"] p,
+.page.active[data-page="2"] li {
+  line-height: 1.6;
+
+}
+
+.page.active[data-page="2"] ul {
+  padding-left: 20px;
+  margin: 0 0 20px 0;/* Töröljük az alapértelmezett margót */
+  list-style-position: inside; /* A felsorolásjelek a szöveggel együtt balra igazítva */
+  text-align: left; /* Balra igazítás a felsorolás egészére */
+}
+
+a {
+    color: #72c2b3;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #d4af37;
+    text-shadow: 0 0 10px rgba(114, 194, 179, 0.8);
+}
+
+a:visited {
+    color: #72c2b3;
+}
+
+a:active {
+    color: #fff;
+}
+
+        /* Reszponzív design - MOBIL OPTIMALIZÁLT */
+        @media (max-width: 768px) {
+            .scroll-item {
+                font-size: 22px;
+                margin-right: 60px;
+            }
+            
+            .scroll-item.main-title {
+                font-size: 26px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .sticky-header {
+                height: 60px;
+            }
+            
+            .main-content {
+                margin-top: 60px;
+                padding: 20px 15px 120px 15px; /* Extra alsó padding a footer miatt */
+            }
+            
+            .pageable-content {
+                margin: 20px auto;
+            }
+            
+            .page-container {
+                min-height: 60vh; /* Nagyobb terület mobilon */
+            }
+            
+            .page-content {
+                padding: 15px;
+                height: 60vh; /* Viewport magasság alapú */
     </style>
 </head>
 <body>
     <!-- Ragadós fejléc scrollozó szöveggel -->
 <header class="sticky-header">
     <div class="scrolling-container">
-        <div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+        <div class="scroll-item main-title">Csurgó 2025 ➤ 3025*</div>
         <div class="scroll-item">Megújulás</div>
         <div class="scroll-item">Innováció</div>
         <div class="scroll-item">Transzparencia</div>
-        <div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+        <div class="scroll-item main-title">Csurgó 2025 ➤ 3025*</div>
         <div class="scroll-item">Megújulás</div>
         <div class="scroll-item">Innováció</div>
         <div class="scroll-item">Transzparencia</div>
-		<div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+		<div class="scroll-item main-title">Csurgó 2025 ➤ 3025*</div>
         <div class="scroll-item">Megújulás</div>
         <div class="scroll-item">Innováció</div>
         <div class="scroll-item">Transzparencia</div>
-		<div class="scroll-item main-title">Csurgó 2025 ➤ 3025</div>
+		<div class="scroll-item main-title">Csurgó 2025 ➤ 3025*</div>
         <div class="scroll-item">Megújulás</div>
         <div class="scroll-item">Innováció</div>
         <div class="scroll-item">Transzparencia</div>
     </div>
 </header>
 
-    <!-- Fő tartalom -->
     <main class="main-content">
-        <section class="hero-section">
-            <h1 class="hero-title">Csurgó Jövője</h1>
-            <p class="hero-subtitle">Egy évezred ugrás a holnap felé*</p>
-            
-            <div class="feature-cards">
-                <div class="feature-card">
-                    <h3>Megújulás</h3>
-                    <p>Csurgó új fejezetet nyithat, ahol a hagyományok és a modern fejlődés kéz a kézben jár. Közösen írjuk majd e város jövőjét, hogy az mindannyiunk számára élhető és inspiráló legyen.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Innováció</h3>
-                    <p>Új technológiák és úttörő megoldások révén fenntartható, virágzó és kényelmesebb várost építhetünk minden csurgói lakos számára.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Transzparencia</h3>
-                    <p>Nyílt kommunikáció és átlátható döntések jellemzik majd a munkámat. Minden polgárnak joga van tájékozódni és véleményt mondani.</p>
-                </div>
-            </div>
-        </section>
-		<div class="pageable-content">
+    <!-- Fő tartalom -->
     <div class="page-container">
-        <div class="page active" data-page="1">
+        <div class="page active" data-page="2">
             <div class="page-content">
                 <article>
       <h1>Egy átlagos keddi nap Csurgón...</h1>
@@ -453,7 +464,7 @@
       <h2>A terv</h2>
       <p>Ha a választópolgárok többsége bizalmat szavaz nekem, a fizetésem jelentős részét a következő célokra fordítom:</p>
       <ul>
-        <li>Összeállítok egy olyan szervert, amely különféle mesterséges intelligencia modelleket futtatva képes 150-200 felhasználót egyszerre (észszerű késleltetéssel) kiszolgálni.</li>
+        <li>Összeállítok egy olyan szervert, amely különféle mesterséges intelligencia modelleket futtatva képes 150-200 felhasználót egyszerre (ésszerű késleltetéssel) kiszolgálni.</li>
         <li>Ezt a gépet az önkormányzatnak ajándékozom.</li>
         <li>Miután a fenti beszerzés teljes mértékben megvalósult (szükségesek egyéb kellékek is, például túláramvédett elosztók, hálózati eszközök stb.), amíg a tisztségemet betöltöm, helyi valódi nonprofit szervezeteknek adományozom havonta ugyanazt az összeget, amelyet addig a beszerzésre fordítottam.</li>
       </ul>
@@ -479,15 +490,59 @@
             </div>
         </div>
         
-        <div class="page" data-page="2">
+        <div class="page" data-page="1">
             <div class="page-content">
-                <h3>Gazdasági Fejlesztés</h3>
-				<p>Az alábbi szöveget az a mesterséges intelligencia generálta önmagától példaszövegként, amit csupán arra utasítottam, hogy a weboldalnak ez a részét (a lapozható dobozt) készítse el.
-				Meglepő módon nagyon hasonlít a szokásos (eddigi...) politikusi szócséplésre, de majd írok helyette kézzelfoghatóbbat.</p>
-				
-                <p>Csurgó gazdasági potenciáljának kiaknázása kulcsfontosságú a város jövője szempontjából. Olyan helyi vállalkozásokat szeretnék támogatni, amelyek munkahelyeket teremtenek és hozzájárulnak a helyi gazdaság erősítéséhez.</p>
-                <p>Kiemelt figyelmet fordítok a turizmus fejlesztésére, hiszen városunk természeti és kulturális adottságai kiváló alapot nyújtanak ehhez. A helyi termékek és szolgáltatások népszerűsítésével új bevételi források nyílhatnak meg.</p>
-                <p>Az innovatív megoldások támogatásával és a digitális fejlesztések előmozdításával biztosíthatjuk, hogy Csurgó lépést tartson a 21. század kihívásaival. Ezt szolgálják majd a tervezett inkubátorházak és co-working terek is.</p>
+                <h1>A város gazdasági helyzete és egy ötlet a megoldásra</h1>
+
+
+
+    <h2>Mi a legnagyobb probléma?</h2>
+    <ul>
+        <li>Az évek óta tartó forráshiány, amit különféle állami "segélyekkel" igyekeznek ellensúlyozni.</li>
+        <li>Az eddigi hibás beruházások, amik nullához közelítő haszonnal jártak (például: Csurgói Ipari Park).</li>
+        <li>Az hogy még mindig elhiszik (talán még saját maguknak is) az emberek hogy ha eddig százszor nem működött valami, akkor százegyedjére fog.</li>
+    </ul>
+
+    <p>Persze értem azt, hogy ha megépül valami, az látható és kézzelfogható, és majd üzemeltetni is kell, és elsődlegsen fel is kell építeni. De például a Hotel Aqualillához hasonló vendéglátóhelyek mindenhol az országban gombamód kinőttek a földből. Ez a piac sokszereplős, telített, és eléggé kicsi a Hotel súlya a piac egészéhez viszonyítva. Minnél kisebb a piac, annál könnyebb a piacon érvényesülni egységnyi gazdasági teljesítményből. Ezért gondoltam arra, hogy ha már beruházás és munkahelyek kellenek, akkor célszerű lenne olyan piacra célozni, amin nincs annyi szereplő, és valószínűleg folyamatosan növekedni fog.</p>
+    
+    <p>A rostkender amiből régen kötelet, vásznat, ruhát készítettek építőipari alapanyag is lehet. <blockquote>"A kendertégla (más néven kenderbeton vagy hempcrete) egy természetes építőanyag, amely kenderrostokból és mészalapú kötőanyagból készül. Élettani előnyei elsősorban abból adódnak, hogy javítja a beltéri környezet minőségét, így pozitív hatással van az ott élők egészségére." <a href="https://grok.com/share/bGVnYWN5_df22c0d4-49e0-493b-9961-8104d20c28db" target="_blank">(Forrás)</a></blockquote></p>
+
+    <p>A rostkendertermesztés a kistérségben élő szántóföldi növénytermesztéssel foglalkozó gazdálkodóknak is segítene, mert maga a növény nem olyan kényes, nincs eltejedt betegsége, vagy károkozója, és a talaj szerkezetét is javítja, rosszabb minőségű szántóföldeket is jövedelmezőbben tudnának hasznosítani. Viszont ha nem tudnák eladni miért termesztenék?</p>
+
+    <p><a href="https://hely.hu/hirek/epitkezel-a-kenderre-gondoltal-mar-interju-horesnyi-bela-kenderhaz-szakertovel/"target="_blank">Horesnyi Béla</a> a téma egyik legmagasabban jegyzett hazai szakértője, vele már beszéltem régebben, akkor közösségi finanszírozás keretében szertett volna az üzlettársaival forráshoz jutni több nagy értékű berendezés beszerzése cáljából. Sajnálatos módon nem sikerült elérniük a céljukat, de a város gazdasági szempontjábol ez előny hiszen így kisebb a piac amire belépne egy ilyen vállalkozással. Őt minimum szakértőnek meg tudom szerezni ehhez.</p>
+
+    <p>Ahogy nézem a Csurgói Ipari Park KFT 100%-ban Csurgó város tulajdona, és 0 forint az éves bevétele, minimális kiadás mellett, viszont 495 millió forint értékű maga az ipari park. (<a href="https://www.e-cegjegyzek.hu/" target="_blank">e-cegjegyzek.hu</a>, cégjegyzékszám: 14-09-304157, a beszámolók pedig itt találhatók: <a href="https://e-beszamolo.im.gov.hu/oldal/kezdolap" target="_blank">e-beszamolo.im.gov.hu</a>)</p>
+
+
+    <h2>Finanszírozási javaslat</h2>
+
+    <p>Csurgó város megtehetné azt, hogy olyan kötvényt bocsájt ki ami nem fizet kamatot, két év a lejárati ideje és több opciója van:</p>
+    <ul>
+        <li>A kötvény átalakítható részvénnyé két év elteltével.</li>
+        <li>Ha nem alakul meg a "kendertégla gyártó Nyrt", akkor a kötvény évi 3% kamatot is fizet.</li>
+    </ul>
+
+    <p>A kötvénykibocsájtásból befolyt pénzeszközből Önkormányzati Magyar Államkötvény lenne vásárolva, és addig kamatozna évi 6,5 százalékkal, amíg nem kell felhasználni. Illetve ha mégsem valósulna meg az elképzelés, akkor két évig maradna a város birtokában és utána az addigi műveletek költségeivel csökkentett kamatot fizetne vissza a tőkével együtt.</p>
+    
+    <p>A Csurgói Ipari Park pedig résztulajdonos lehetne, cserébe pedig az ipari park negyedét (kerekítve 125 millió forint érték) apportálná az Nyrt-be.</p>
+
+    <p>Ha például 1,250 milliárd forint lenne a kitűzött cél, akkor 1,125 milliárd forintból Önkormányzati Magyar Államkötvény lenne vásárolva ami évi 73,125,000 forint kamatot fizetne, amiből az önkormányzat 39,375,000 forintot használhatna fel ezzel a projekttel kapcsolatban a háttérmunkára. Lehet hogy soknak tűnik 1,125 milliárd forint, de minden héten többszörösét költik el az Ötöslottó játékon, igaz kötvényeket nem lehet a benzinkúton vásárolni. Már maga ez a konstrukció hírverést csapna, tehát lenne annyira ismert a lehetőség, hogy sikeres legyen.</p>
+
+    <p>Jó esetben a város tartós bevételi forrásra tehetne szert a piacról, és csökkene a függése az állami jutattásoktól.</p>
+
+
+
+    <h2>VAGY:</h2>
+    <p>Sajnos csak összesen kb 400 méter hosszú az ipari parkban lévő út, és egy része lejt is, de talán 200 méteres gyorsulási versenyre alkalmas lehet.</p>
+
+    <h2>ILLETVE:</h2>
+    <p>20 évvel ezelőtt:</p>
+    <blockquote>"Népmeseparkot szeretnének építeni a Somogy megyei Csurgó közelében. A 6 milliárdos beruházás még nem kezdődött el, sőt a pénzt is majd csak ezután próbálják pályázatokon megszerezni az önkormányzatok."
+    <br>
+    <a href="https://rtl.hu/hirado/2005/04/17/mesehosok-keszulnek-csurgora" target="_blank">RTL Híradó - 2005.04.17</a>
+    </blockquote>
+	
+    <p>Nem tudom, hogy akkor honnét jött a hatmilliárd, de inflációval korrigálva eléggé érdekes... <a href="https://statmonitor.hu/inflacio-kalkulator" target="_blank">Infláció kalkulátor</a></p>
             </div>
         </div>
         
@@ -592,7 +647,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <footer class="fixed-footer">
     <div class="footer-content">
-        <p class="signature-counter">Az indulásomhoz még szükséges aláírások száma: <strong>115</strong></p>
+        <p class="signature-counter">Az indulásomhoz még szükséges aláírások száma: <strong>114</strong></p>
         <div class="contact-info">
             <p class="name">Vass Zoltán</p>
             <a href="mailto:a.friendly.guy@tuta.io" class="email">a.friendly.guy@tuta.io</a>
